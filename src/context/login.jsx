@@ -44,10 +44,16 @@ export function AuthProvider({ children }) {
   }
 
   async function signup(email, password, username) {
-    return apiFetch(ENDPOINTS.signup, {
+    const data = await apiFetch(ENDPOINTS.signup, {
       method: "POST",
       body: JSON.stringify({ email, password, username }),
     });
+    console.log(data);
+    const newToken =
+      data.token || data.access_token || data.session?.access_token;
+    if (!newToken) throw new Error("No token returned from /login");
+    localStorage.setItem("token", newToken);
+    setToken(newToken);
   }
 
   return (

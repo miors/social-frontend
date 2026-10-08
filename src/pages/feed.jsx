@@ -135,7 +135,7 @@ export default function Feed() {
 
         {posts.map((post) => (
           <article
-            key={post.id}
+            key={post.post_id}
             className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition"
           >
             <h3 className="text-lg font-bold text-slate-900 mb-2">

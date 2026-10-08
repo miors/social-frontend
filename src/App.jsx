@@ -7,6 +7,7 @@ import Friends from "./pages/friends";
 import Logo from "./assets/santaispace.png";
 
 const BASE_URL = `https://social-backend-production-019c.up.railway.app`;
+// const BASE_URL = `http://localhost:3000`;
 export const ENDPOINTS = {
   signup: `${BASE_URL}/signup`,
   login: `${BASE_URL}/login`,
